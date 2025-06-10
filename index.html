@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login to My Links</title>
+  <title>Login</title>
   <style>
     body {
       margin: 0;
@@ -28,12 +28,15 @@
       width: 300px;
       backdrop-filter: blur(5px);
     }
-    input, button {
+    input, button, a {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
       border: none;
       border-radius: 5px;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
     }
     input {
       background-color: rgba(255, 255, 255, 0.2);
@@ -48,13 +51,8 @@
       background-color: #218838;
     }
     a {
-      display: block;
-      margin: 10px 0;
       background-color: #007bff;
-      padding: 10px;
-      border-radius: 5px;
       color: white;
-      text-decoration: none;
     }
     a:hover {
       background-color: #0056b3;
@@ -72,11 +70,8 @@
     </div>
 
     <div class="box" id="linksBox" style="display: none;">
-      <h2>🌐 My Links</h2>
-      <a href="https://vegax.gg" target="_blank">Vegax.gg</a>
-      <a href="https://example.com" target="_blank">My Website</a>
-      <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a>
-      <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+      <h2>✅ Access Granted</h2>
+      <a href="https://vegax.gg" target="_blank">Go to vegax.gg</a>
     </div>
   </div>
 
@@ -92,6 +87,13 @@
         document.getElementById('error').style.display = 'block';
       }
     }
+
+    // Listen for Enter key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        checkLogin();
+      }
+    });
   </script>
 </body>
 </html>
