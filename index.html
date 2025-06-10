@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login to My Links</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url('city.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      backdrop-filter: blur(5px);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    input {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    a {
+      display: block;
+      margin: 10px 0;
+      background-color: #007bff;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="box" id="loginBox">
+      <h2>🔐 Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="checkLogin()">Login</button>
+      <p id="error" style="color: #ff4d4d; display: none;">Incorrect login.</p>
+    </div>
+
+    <div class="box" id="linksBox" style="display: none;">
+      <h2>🌐 My Links</h2>
+      <a href="https://vegax.gg" target="_blank">Vegax.gg</a>
+      <a href="https://example.com" target="_blank">My Website</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a>
+      <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+    </div>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value;
+
+      if (user === 'github' && pass === 'hell no.') {
+        document.getElementById('loginBox').style.display = 'none';
+        document.getElementById('linksBox').style.display = 'block';
+      } else {
+        document.getElementById('error').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
